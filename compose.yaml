@@ -11,9 +11,9 @@ services:
   server:
     build:
       context: .
-      target: final
+      target: development #target: final
     ports:
-      - 8080:80
+      - 8080:8080
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
@@ -24,6 +24,12 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
   db:
     image: postgres
     restart: always
