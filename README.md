@@ -1,3 +1,2 @@
-# docker-dotnet-sample
+Testing Docker Container for ASP.net
 
-A simple .NET web application example for [Docker's .NET Language Guide](https://docs.docker.com/language/dotnet/).
